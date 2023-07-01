@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+:root{
+    --second-color: #26FED7;
+    --frist-color: #EB6666;
+    --bg-color: #292D36;
+    --title-color: hsl(0, 0%, 12%);
+    --text-color: hsl(0, 0%, 50%);
+    --white-color: #fff;
+    --body-color: hsl(0, 0%, 96%);
+    --container-color: hsl(0, 0%, 100%);
+}
+.app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.caculator{
+    width: 100%;
+    max-width: 375px;
+    min-height: 640px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background-color: var(--title-color);
+}
+
+.display{
+    min-height: 200px;
+    padding: 1.5rem;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: var(--white-color);
+    text-align: right;
+    flex: 1 1 0%;
+    overflow: auto;
+    background-color: var(--title-color);
+}
+
+.input{
+    width: 100%;
+    font-size: 1.25rem;
+    margin-bottom: .5rem;
+}
+
+.output{
+    font-size: 3rem;
+    font-weight: 700;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.display .operator {
+	color: #EB6666;
+}
+
+.display .brackets,
+.display .percent {
+	color: #26FED7;
+}
+
+.keys{
+    background-color: var(--bg-color);
+}
+
+.keys{
+    padding: 1.5rem;
+    border-radius: 1.5rem 1.5rem 0 0;
+    display: grid;
+    gap: 1rem;
+    box-shadow: 0 -2px 16px rgba(0, 0, 0, .2);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    color: var(--white-color);
+    background-color: var(--bg-color);
+}
+
+
+.keys .key{
+    position: relative;
+    cursor: pointer;
+    display: block;
+    height: 0;
+    padding-top: 100%;
+    background-color: #262933;
+    border-radius: 1rem;
+    transition: .2s;
+    user-select: none;
+}
+
+.key:hover{
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, .2);
+    filter: blur(-10px);
+}
+
+.key span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.keys .key.operator span {
+	color: var(--frist-color);
+}
+
+.keys .key.action span {
+	color: var(--second-color);
+}
